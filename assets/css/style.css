@@ -331,6 +331,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* Projects */
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -521,6 +527,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero-avatar img { width: 140px; height: 140px; }
   .about-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .edu-grid { grid-template-columns: 1fr; }
   .contact-links { grid-template-columns: 1fr; }
