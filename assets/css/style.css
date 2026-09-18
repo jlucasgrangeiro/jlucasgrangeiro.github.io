@@ -329,6 +329,44 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--accent);
 }
 
+/* Projects */
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+}
+
+.project-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.project-head h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.project-badge {
+  display: block;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  margin: 0 0 18px;
+  max-width: 68ch;
+}
+
+.project-card .tag-list {
+  margin-bottom: 22px;
+}
+
 /* Skills */
 
 .skills-grid {
