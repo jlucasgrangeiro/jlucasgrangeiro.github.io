@@ -34,3 +34,40 @@ if ("IntersectionObserver" in window) {
 } else {
   revealEls.forEach((el) => el.classList.add("in-view"));
 }
+
+const EMAIL = "jaozim2@gmail.com";
+
+function copyEmail() {
+  if (navigator.clipboard) {
+    return navigator.clipboard.writeText(EMAIL);
+  }
+  return Promise.reject();
+}
+
+const heroContactBtn = document.getElementById("heroContactBtn");
+if (heroContactBtn) {
+  heroContactBtn.addEventListener("click", () => {
+    const original = heroContactBtn.dataset.defaultLabel || heroContactBtn.textContent;
+    copyEmail().then(() => {
+      heroContactBtn.textContent = "E-mail copiado!";
+      setTimeout(() => {
+        heroContactBtn.textContent = original;
+      }, 2000);
+    }).catch(() => {});
+  });
+}
+
+const emailContactLink = document.querySelector('.contact-link[href^="mailto:"]');
+if (emailContactLink) {
+  const valueSpan = emailContactLink.querySelector("span:last-child");
+  emailContactLink.addEventListener("click", () => {
+    if (!valueSpan) return;
+    const original = valueSpan.textContent;
+    copyEmail().then(() => {
+      valueSpan.textContent = "Copiado!";
+      setTimeout(() => {
+        valueSpan.textContent = original;
+      }, 2000);
+    }).catch(() => {});
+  });
+}
