@@ -44,19 +44,6 @@ function copyEmail() {
   return Promise.reject();
 }
 
-const heroContactBtn = document.getElementById("heroContactBtn");
-if (heroContactBtn) {
-  heroContactBtn.addEventListener("click", () => {
-    const original = heroContactBtn.dataset.defaultLabel || heroContactBtn.textContent;
-    copyEmail().then(() => {
-      heroContactBtn.textContent = "E-mail copiado!";
-      setTimeout(() => {
-        heroContactBtn.textContent = original;
-      }, 2000);
-    }).catch(() => {});
-  });
-}
-
 const emailContactLink = document.querySelector('.contact-link[href^="mailto:"]');
 if (emailContactLink) {
   const valueSpan = emailContactLink.querySelector("span:last-child");
